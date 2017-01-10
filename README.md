@@ -9,8 +9,6 @@ Simple app to calculate the Shiny Chance of Pokemon in Pokemon Sun and Moon.
  
  Soft Resets
  
- Breeding
- 
  Matsuda Breeding
 
 #Done:#
@@ -25,8 +23,6 @@ Shiny Charm Rates
 Soft Reset Rates
 
 Matsuda Breeding Rates
-
-Breeding Rates
 
 Changing Modes
 

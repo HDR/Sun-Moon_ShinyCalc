@@ -17,15 +17,13 @@ Will support the following Methods of shiny hunting:
 #--------------------------------------------------#
 
 
-Done:
-
+#Done:#
 S.O.S Rates (With Overflow)
 
 
 
 
-Not Done:
-
+#Not Done:#
 Shiny Charm Rates
 
 Soft Reset Rates

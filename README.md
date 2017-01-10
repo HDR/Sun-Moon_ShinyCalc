@@ -13,9 +13,6 @@ Simple app to calculate the Shiny Chance of Pokemon in Pokemon Sun and Moon.
  
  Matsuda Breeding
 
-#--------------------------------------------------#
-
-
 #Done:#
 S.O.S Rates (With Overflow)
 

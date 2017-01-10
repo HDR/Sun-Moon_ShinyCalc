@@ -25,7 +25,7 @@ public class ShinyCalc extends AppCompatActivity {
         currChance = (TextView) findViewById(R.id.encChance);
 
         Spinner dropdown = (Spinner) findViewById(R.id.modeSet);
-        String[] items = new String[]{"S.O.S", "Matsuda Breeding", "Breeding", "Soft Reset"};
+        String[] items = new String[]{"S.O.S", "Matsuda", "Soft Reset"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
     }

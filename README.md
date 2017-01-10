@@ -15,3 +15,21 @@ Will support the following Methods of shiny hunting:
  Matsuda Breeding
 
 #--------------------------------------------------#
+
+
+Done:
+
+S.O.S Rates (With Overflow)
+
+
+
+
+Not Done:
+
+Shiny Charm Rates
+
+Soft Reset Rates
+
+Matsuda Breeding Rates
+
+Breeding Rates

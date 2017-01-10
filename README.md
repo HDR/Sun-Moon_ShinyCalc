@@ -31,3 +31,9 @@ Soft Reset Rates
 Matsuda Breeding Rates
 
 Breeding Rates
+
+Changing Modes
+
+Ability to set Encounters
+
+Save current Encounters and mode on app close

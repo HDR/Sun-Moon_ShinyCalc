@@ -7,5 +7,19 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="MaterialDarkHDR" parent="android:Theme.Material">
+        <item name="android:colorPrimary">@color/moPrimary</item>
+        <item name="android:colorPrimaryDark">@color/moPrimaryDark</item>
+        <item name="android:colorAccent">@color/moAccent</item>
+        <item name="android:colorBackground">@color/moBackground</item>
+        <item name="android:colorForeground">@color/moForeground</item>
+        <item name="android:navigationBarColor">@color/moNavBarColor</item>
+        <item name="android:statusBarColor">@color/moStatusBarColor</item>
+        <item name="android:textColorPrimary">@color/moTextColorPrimary</item>
+        <item name="android:textColorPrimaryInverse">@color/moTextColorPrimaryInverse</item>
+        <item name="android:textColorSecondary">@color/moTextColorSecondary</item>
+        <item name="android:textColorSecondaryInverse">@color/moTextColorSecondaryInverse</item>
+        <item name="android:windowBackground">@color/moWindowBackground</item>
+    </style>
 
 </resources>

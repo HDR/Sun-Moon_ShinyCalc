@@ -3,4 +3,17 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="moPrimary">#212121</color>
+    <color name="moPrimaryDark">#000000</color>
+    <color name="moAccent">#ff8800</color>
+    <color name="moBackground">#303030</color>
+    <color name="moForeground">#ffffff</color>
+    <color name="moNavBarColor">#000000</color>
+    <color name="moStatusBarColor">#000000</color>
+    <color name="moTextColorPrimary">#ffffff</color>
+    <color name="moTextColorPrimaryInverse">#de000000</color>
+    <color name="moTextColorSecondary">#b3ffffff</color>
+    <color name="moTextColorSecondaryInverse">#8a000000</color>
+    <color name="moWindowBackground">#8a000000</color>
 </resources>

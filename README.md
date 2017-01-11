@@ -28,4 +28,4 @@ Changing Modes
 
 Ability to set Encounters
 
-Save current Encounters and mode on app close
+Save current Encounters, mode and charm status on app close

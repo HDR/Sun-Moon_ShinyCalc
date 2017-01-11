@@ -6,10 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class ShinyCalc extends AppCompatActivity {
+
+    CheckBox ShinyCharm;
 
     TextView encValue;
     int counter = 0;
@@ -62,29 +65,60 @@ public class ShinyCalc extends AppCompatActivity {
     }
 
     public void ChanceInfo(){
-        if (counter <= 69) {
+        ShinyCharm = (CheckBox) findViewById(R.id.charm);
+        if (counter <= 69 && !ShinyCharm.isChecked()) {
             currChance.setText("1/4096");
         }
-        if (counter >= 70 && counter <= 255) {
+        if (counter <= 69 && ShinyCharm.isChecked()) {
+            currChance.setText("1/1365");
+        }
+        if (counter >= 70 && counter <= 255 && !ShinyCharm.isChecked()) {
             currChance.setText("1/1024");
         }
-        if (counter >= 256 && counter <= 324) {
+        if (counter >= 70 && counter <= 255 && ShinyCharm.isChecked()) {
+            currChance.setText("1/683");
+        }
+        if (counter >= 256 && counter <= 324 && !ShinyCharm.isChecked()) {
             currChance.setText("1/4096");
         }
-        if (counter >= 325 && counter <= 509) {
+        if (counter >= 256 && counter <= 324 && ShinyCharm.isChecked()) {
+            currChance.setText("1/1365");
+        }
+        if (counter >= 325 && counter <= 509 && !ShinyCharm.isChecked()) {
             currChance.setText("1/1024");
         }
-        if (counter >= 510 && counter <= 579) {
+        if (counter >= 325 && counter <= 509 && ShinyCharm.isChecked()) {
+            currChance.setText("1/683");
+        }
+        if (counter >= 510 && counter <= 579 && !ShinyCharm.isChecked()) {
             currChance.setText("1/4096");
         }
-        if (counter >= 580 && counter <= 764) {
+        if (counter >= 510 && counter <= 579 && ShinyCharm.isChecked()) {
+            currChance.setText("1/1365");
+        }
+        if (counter >= 580 && counter <= 764 && !ShinyCharm.isChecked()) {
             currChance.setText("1/1024");
         }
-        if (counter >= 765 && counter <= 834) {
+        if (counter >= 580 && counter <= 764 && ShinyCharm.isChecked()) {
+            currChance.setText("1/683");
+        }
+        if (counter >= 765 && counter <= 834 && !ShinyCharm.isChecked()) {
             currChance.setText("1/4096");
         }
-        if (counter >= 835 && counter <= 1019) {
+        if (counter >= 765 && counter <= 834 && ShinyCharm.isChecked()) {
+            currChance.setText("1/1365");
+        }
+        if (counter >= 835 && counter <= 1019 && !ShinyCharm.isChecked()) {
             currChance.setText("1/1024");
+        }
+        if (counter >= 835 && counter <= 1019 && ShinyCharm.isChecked()) {
+            currChance.setText("1/683");
+        }
+        if (counter >= 1020 && counter <= 1089 && !ShinyCharm.isChecked()) {
+            currChance.setText("1/4096");
+        }
+        if (counter >= 1020 && counter <= 1089 && ShinyCharm.isChecked()) {
+            currChance.setText("1/1365");
         }
 }
 
@@ -96,5 +130,11 @@ public class ShinyCalc extends AppCompatActivity {
         editor.apply();
 
     }
+
+    public void updateData(View view) {
+        ChanceInfo();
+    }
+
+    
 
 }

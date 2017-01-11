@@ -13,7 +13,9 @@ Simple app to calculate the Shiny Chance of Pokemon in Pokemon Sun and Moon.
 
 #Done:#
 S.O.S Rates (With Overflow)
+
 Shiny Charm Rates for S.O.S
+
 Save Current Encounters
 
 

@@ -9,9 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import static com.hdr.shinycalculator.R.id.enCounter;
-import static com.hdr.shinycalculator.R.id.textinput_counter;
-
 public class ShinyCalc extends AppCompatActivity {
 
     TextView encValue;
@@ -25,8 +22,12 @@ public class ShinyCalc extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shiny_calc);
 
-        encValue = (TextView) findViewById(enCounter);
+        encValue = (TextView) findViewById(R.id.enCounter);
         currChance = (TextView) findViewById(R.id.encChance);
+
+        SharedPreferences cS = PreferenceManager.getDefaultSharedPreferences(this);
+        int counter = cS.getInt("counterNum", 0);
+        encValue.setText(Integer.toString(counter));
 
         Spinner dropdown = (Spinner) findViewById(R.id.modeSet);
         String[] items = new String[]{"S.O.S", "Matsuda", "Soft Reset"};
@@ -67,39 +68,41 @@ public class ShinyCalc extends AppCompatActivity {
         if (counter >= 70 && counter <= 255) {
             currChance.setText("1/1024");
         }
-        if (counter >= 256 && counter <= 325) {
+        if (counter >= 256 && counter <= 324) {
             currChance.setText("1/4096");
         }
-        if (counter >= 325 && counter <= 510) {
+        if (counter >= 325 && counter <= 509) {
             currChance.setText("1/1024");
         }
-        if (counter >= 510 && counter <= 580) {
+        if (counter >= 510 && counter <= 579) {
             currChance.setText("1/4096");
         }
-        if (counter >= 580 && counter <= 765) {
+        if (counter >= 580 && counter <= 764) {
             currChance.setText("1/1024");
         }
-        if (counter >= 765 && counter <= 835) {
+        if (counter >= 765 && counter <= 834) {
             currChance.setText("1/4096");
         }
-        if (counter >= 835 && counter <= 1020) {
+        if (counter >= 835 && counter <= 1019) {
             currChance.setText("1/1024");
         }
-        loadData();
+}
+
+    public void saveData() {
+        SharedPreferences sC =  PreferenceManager.getDefaultSharedPreferences(this);
+
+        SharedPreferences.Editor editor = sC.edit();
+        editor.putInt("counterNum", Integer.parseInt(encValue.getText().toString()));
+        editor.apply();
+
     }
 
-    private void saveData() {
-        SharedPreferences sC = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor edit = sC.edit();
-        edit.putInt("CounterNum", counter);
-        edit.commit();
-    }
-
-    private void loadData() {
+    public void loadData(View view) {
         SharedPreferences cS = PreferenceManager.getDefaultSharedPreferences(this);
-        int counterNumber = cS.getInt("counterNum", counter);
-    }
+        int counter = cS.getInt("counterNum", 0);
+        encValue.setText(Integer.toString(counter));
 
+    }
 
 
 }

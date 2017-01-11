@@ -33,3 +33,11 @@ Changing Modes
 Ability to set Encounters
 
 Save current Mode and charm status on app close
+
+
+#Requirements#
+Gradle 2.14.1 or Above
+
+Android Studio
+
+Android 5.0 (Api Version 21 Minimum)

@@ -1,7 +1,7 @@
 package com.hdr.shinycalculator;
 
-import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +10,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import static com.hdr.shinycalculator.R.id.enCounter;
+import static com.hdr.shinycalculator.R.id.textinput_counter;
 
 public class ShinyCalc extends AppCompatActivity {
 
@@ -29,16 +30,16 @@ public class ShinyCalc extends AppCompatActivity {
 
         Spinner dropdown = (Spinner) findViewById(R.id.modeSet);
         String[] items = new String[]{"S.O.S", "Matsuda", "Soft Reset"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
     }
 
     public void increaseCount(View view) {
-          counter++;
-          encValue.setText(Integer.toString(counter));
-          ChanceInfo();
-          saveInfo();
-     }
+        counter++;
+        encValue.setText(Integer.toString(counter));
+        ChanceInfo();
+        saveData();
+    }
 
     public void decreaseCount(View view) {
         if (counter == 0) {
@@ -48,7 +49,7 @@ public class ShinyCalc extends AppCompatActivity {
             counter--;
             encValue.setText(Integer.toString(counter));
             ChanceInfo();
-            saveInfo();
+            saveData();
         }
     }
 
@@ -56,16 +57,7 @@ public class ShinyCalc extends AppCompatActivity {
         counter = 0;
         encValue.setText(String.valueOf(counter));
         currChance.setText("1/4096");
-        saveInfo();
-    }
-
-    public void saveInfo(){
-        SharedPreferences sharedPref = getSharedPreferences("shinyCalcSettings", Context.MODE_PRIVATE);
-
-        SharedPreferences.Editor editor = sharedPref.edit();
-
-        editor.putString("counter", Integer.toString(counter));
-        editor.apply();
+        saveData();
     }
 
     public void ChanceInfo(){
@@ -93,8 +85,21 @@ public class ShinyCalc extends AppCompatActivity {
         if (counter >= 835 && counter <= 1020) {
             currChance.setText("1/1024");
         }
+        loadData();
+    }
+
+    private void saveData() {
+        SharedPreferences sC = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor edit = sC.edit();
+        edit.putInt("CounterNum", counter);
+        edit.commit();
+    }
+
+    private void loadData() {
+        SharedPreferences cS = PreferenceManager.getDefaultSharedPreferences(this);
+        int counterNumber = cS.getInt("counterNum", counter);
     }
 
 
 
-    }
+}

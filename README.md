@@ -22,7 +22,7 @@ Save Current Encounters
 
 
 #Not Done:#
-Shiny Charm Rates
+Shiny Charm Rates for Matsuda Method and Soft Resets
 
 Soft Reset Rates
 

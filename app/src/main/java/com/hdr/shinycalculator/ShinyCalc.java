@@ -60,7 +60,6 @@ public class ShinyCalc extends AppCompatActivity {
     public void resetCount(View view) {
         counter = 0;
         encValue.setText(String.valueOf(counter));
-        currChance.setText("1/4096");
         saveData();
     }
 
@@ -72,55 +71,26 @@ public class ShinyCalc extends AppCompatActivity {
         if (counter <= 69 && ShinyCharm.isChecked()) {
             currChance.setText("1/1365");
         }
-        if (counter >= 70 && counter <= 255 && !ShinyCharm.isChecked()) {
-            currChance.setText("1/1024");
+
+        updateChanceInfo(70, 255, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(256, 324, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(325, 509, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(510, 579, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(580, 764, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(765, 834, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(835, 1019, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(1020, 1089, "1/1365", "1/4096", ShinyCharm.isChecked());
+    }
+
+    private void updateChanceInfo(int lower_bound, int higher_bound, String chanceChecked, String chanceUnchecked, boolean shinyCharm) {
+        if (counter >= lower_bound && counter <= higher_bound ) {
+            if (shinyCharm) {
+                currChance.setText(chanceChecked);
+            } else {
+                currChance.setText(chanceUnchecked);
+            }
         }
-        if (counter >= 70 && counter <= 255 && ShinyCharm.isChecked()) {
-            currChance.setText("1/683");
-        }
-        if (counter >= 256 && counter <= 324 && !ShinyCharm.isChecked()) {
-            currChance.setText("1/4096");
-        }
-        if (counter >= 256 && counter <= 324 && ShinyCharm.isChecked()) {
-            currChance.setText("1/1365");
-        }
-        if (counter >= 325 && counter <= 509 && !ShinyCharm.isChecked()) {
-            currChance.setText("1/1024");
-        }
-        if (counter >= 325 && counter <= 509 && ShinyCharm.isChecked()) {
-            currChance.setText("1/683");
-        }
-        if (counter >= 510 && counter <= 579 && !ShinyCharm.isChecked()) {
-            currChance.setText("1/4096");
-        }
-        if (counter >= 510 && counter <= 579 && ShinyCharm.isChecked()) {
-            currChance.setText("1/1365");
-        }
-        if (counter >= 580 && counter <= 764 && !ShinyCharm.isChecked()) {
-            currChance.setText("1/1024");
-        }
-        if (counter >= 580 && counter <= 764 && ShinyCharm.isChecked()) {
-            currChance.setText("1/683");
-        }
-        if (counter >= 765 && counter <= 834 && !ShinyCharm.isChecked()) {
-            currChance.setText("1/4096");
-        }
-        if (counter >= 765 && counter <= 834 && ShinyCharm.isChecked()) {
-            currChance.setText("1/1365");
-        }
-        if (counter >= 835 && counter <= 1019 && !ShinyCharm.isChecked()) {
-            currChance.setText("1/1024");
-        }
-        if (counter >= 835 && counter <= 1019 && ShinyCharm.isChecked()) {
-            currChance.setText("1/683");
-        }
-        if (counter >= 1020 && counter <= 1089 && !ShinyCharm.isChecked()) {
-            currChance.setText("1/4096");
-        }
-        if (counter >= 1020 && counter <= 1089 && ShinyCharm.isChecked()) {
-            currChance.setText("1/1365");
-        }
-}
+    }
 
     public void saveData() {
         SharedPreferences sC =  PreferenceManager.getDefaultSharedPreferences(this);
@@ -128,7 +98,6 @@ public class ShinyCalc extends AppCompatActivity {
         SharedPreferences.Editor editor = sC.edit();
         editor.putInt("counterNum", Integer.parseInt(encValue.getText().toString()));
         editor.apply();
-
     }
 
     public void updateData(View view) {

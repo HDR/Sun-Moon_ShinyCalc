@@ -97,12 +97,4 @@ public class ShinyCalc extends AppCompatActivity {
 
     }
 
-    public void loadData(View view) {
-        SharedPreferences cS = PreferenceManager.getDefaultSharedPreferences(this);
-        int counter = cS.getInt("counterNum", 0);
-        encValue.setText(Integer.toString(counter));
-
-    }
-
-
 }

@@ -40,4 +40,4 @@ Gradle 2.14.1 or Above
 
 Android Studio
 
-Android 5.0 (Api Version 21 Minimum)
+Android 5.0 (SDK Version 21 Minimum)

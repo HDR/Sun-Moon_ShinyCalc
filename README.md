@@ -20,7 +20,7 @@ Keep current Encounters on restart
 
 Set max Encounters to 4096
 
-
+Ability to set Encounters
 
 
 #Not Done:#
@@ -31,8 +31,6 @@ Soft Reset Rates
 Matsuda Breeding Rates
 
 Changing Modes
-
-Ability to set Encounters
 
 Save current Mode and charm status on app close
 

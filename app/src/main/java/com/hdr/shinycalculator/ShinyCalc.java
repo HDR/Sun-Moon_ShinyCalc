@@ -38,10 +38,15 @@ public class ShinyCalc extends AppCompatActivity {
 
     public void increaseCount(View view) {
         int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
-        counter++;
-        encValue.setText(Integer.toString(counter));
-        ChanceInfo();
-        saveData();
+        if (counter == 4096) {
+            //Do Nothing
+        }
+        else if (counter >= 0){
+            counter++;
+            encValue.setText(Integer.toString(counter));
+            ChanceInfo();
+            saveData();
+        }
     }
 
     public void decreaseCount(View view) {
@@ -73,7 +78,6 @@ public class ShinyCalc extends AppCompatActivity {
         if (counter <= 69 && ShinyCharm.isChecked()) {
             currChance.setText("1/1365");
         }
-
         updateChanceInfo(70, 255, "1/683", "1/1024", ShinyCharm.isChecked());
         updateChanceInfo(256, 324, "1/1365", "1/4096", ShinyCharm.isChecked());
         updateChanceInfo(325, 509, "1/683", "1/1024", ShinyCharm.isChecked());
@@ -82,6 +86,30 @@ public class ShinyCalc extends AppCompatActivity {
         updateChanceInfo(765, 834, "1/1365", "1/4096", ShinyCharm.isChecked());
         updateChanceInfo(835, 1019, "1/683", "1/1024", ShinyCharm.isChecked());
         updateChanceInfo(1020, 1089, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(1090, 1274, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(1275, 1344, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(1345, 1549, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(1530, 1599, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(1600, 1784, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(1785, 1854, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(1855, 2039, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(2040, 2109, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(2110, 2294, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(2295, 2364, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(2365, 2549, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(2550, 2619, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(2620, 2804, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(2805, 2874, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(2875, 3059, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(3060, 3129, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(3130, 3314, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(3315, 3384, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(3385, 3569, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(3570, 3639, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(3640, 3824, "1/683", "1/1024", ShinyCharm.isChecked());
+        updateChanceInfo(3825, 3894, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(3895, 4079, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(4080, 4149, "1/1365", "1/4096", ShinyCharm.isChecked());
     }
 
     private void updateChanceInfo(int lower_bound, int higher_bound, String chanceChecked, String chanceUnchecked, boolean shinyCharm) {

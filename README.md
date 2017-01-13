@@ -22,18 +22,19 @@ Set max Encounters to 4096
 
 Ability to set Encounters
 
-
-#Not Done:#
-Shiny Charm Rates for Matsuda Method and Soft Resets
-
 Soft Reset Rates
 
 Matsuda Breeding Rates
 
 Changing Modes
 
+#Not Done:#
+
+Update Rates on Mode Selection
+
 Save current Mode and charm status on app close
 
+Load Previous mode and charm status on launch
 
 #Requirements#
 Gradle 2.14.1 or Above

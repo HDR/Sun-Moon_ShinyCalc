@@ -41,6 +41,9 @@ Load Previous mode on launch
 #Might Be Added:#
 Dark Mode w/ Toggle
 
+![Dark Mode](http://i.imgur.com/e90f6pc.png)
+
+
 #Requirements#
 Gradle 2.14.1 or Above
 

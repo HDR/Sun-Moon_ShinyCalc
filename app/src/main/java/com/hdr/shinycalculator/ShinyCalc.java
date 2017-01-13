@@ -15,7 +15,6 @@ public class ShinyCalc extends AppCompatActivity {
     CheckBox ShinyCharm;
 
     TextView encValue;
-    int counter = 0;
 
     TextView currChance;
 
@@ -28,8 +27,7 @@ public class ShinyCalc extends AppCompatActivity {
         encValue = (TextView) findViewById(R.id.enCounter);
         currChance = (TextView) findViewById(R.id.encChance);
 
-        SharedPreferences cS = PreferenceManager.getDefaultSharedPreferences(this);
-        int counter = cS.getInt("counterNum", 0);
+        int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
         encValue.setText(Integer.toString(counter));
 
         Spinner dropdown = (Spinner) findViewById(R.id.modeSet);
@@ -39,6 +37,7 @@ public class ShinyCalc extends AppCompatActivity {
     }
 
     public void increaseCount(View view) {
+        int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
         counter++;
         encValue.setText(Integer.toString(counter));
         ChanceInfo();
@@ -46,6 +45,7 @@ public class ShinyCalc extends AppCompatActivity {
     }
 
     public void decreaseCount(View view) {
+        int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
         if (counter == 0) {
             //Do Nothing
         }
@@ -58,12 +58,14 @@ public class ShinyCalc extends AppCompatActivity {
     }
 
     public void resetCount(View view) {
+        int counter;
         counter = 0;
         encValue.setText(String.valueOf(counter));
         saveData();
     }
 
     public void ChanceInfo(){
+        int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
         ShinyCharm = (CheckBox) findViewById(R.id.charm);
         if (counter <= 69 && !ShinyCharm.isChecked()) {
             currChance.setText("1/4096");
@@ -83,6 +85,7 @@ public class ShinyCalc extends AppCompatActivity {
     }
 
     private void updateChanceInfo(int lower_bound, int higher_bound, String chanceChecked, String chanceUnchecked, boolean shinyCharm) {
+        int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
         if (counter >= lower_bound && counter <= higher_bound ) {
             if (shinyCharm) {
                 currChance.setText(chanceChecked);

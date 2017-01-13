@@ -1,12 +1,16 @@
 package com.hdr.shinycalculator;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethod;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -18,6 +22,8 @@ public class ShinyCalc extends AppCompatActivity {
 
     TextView currChance;
 
+    EditText setEncount;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,7 @@ public class ShinyCalc extends AppCompatActivity {
 
         encValue = (TextView) findViewById(R.id.enCounter);
         currChance = (TextView) findViewById(R.id.encChance);
+        setEncount = (EditText) findViewById(R.id.setField);
 
         int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
         encValue.setText(Integer.toString(counter));
@@ -134,6 +141,32 @@ public class ShinyCalc extends AppCompatActivity {
     public void updateData(View view) {
         ChanceInfo();
     }
+
+    public void setEncounters(View view){
+        setEncount.setVisibility(View.VISIBLE);
+        setEncount.requestFocus();
+        setEncount.setFocusableInTouchMode(true);
+        InputMethodManager keyBo = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        keyBo.showSoftInput(setEncount, InputMethodManager.SHOW_IMPLICIT);
+    }
+
+    public void setField(View view) {
+        String setEncount_text = setEncount.getText().toString().trim();
+        if(setEncount_text.isEmpty()) {
+            //do Nothing
+         }
+        else {
+            setEncount.getText();
+            encValue.setText(String.valueOf(setEncount.getText()));
+            saveData();
+            setEncount.setVisibility(View.GONE);
+            setEncount.setText("");
+            InputMethodManager keyBo = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            keyBo.hideSoftInputFromWindow(setEncount.getWindowToken(), 0);
+        }
+
+    }
+
 
     
 

@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -38,10 +37,14 @@ public class ShinyCalc extends AppCompatActivity {
         currChance = (TextView) findViewById(R.id.encChance);
         setEncount = (EditText) findViewById(R.id.setField);
         setMode = (Spinner) findViewById(R.id.modeSet);
+        ShinyCharm = (CheckBox) findViewById(R.id.charm);
 
         int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
         encValue.setText(Integer.toString(counter));
-        
+
+        boolean charmStatus = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("CharmStatus", false);
+        ShinyCharm.setChecked(charmStatus);
+
         String[] items = new String[]{"S.O.S", "Matsuda", "Soft Reset"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         setMode.setAdapter(adapter);
@@ -158,11 +161,14 @@ public class ShinyCalc extends AppCompatActivity {
         SharedPreferences.Editor editor = sC.edit();
         editor.putInt("counterNum", Integer.parseInt(encValue.getText().toString()));
         editor.putString("CurrentMode", setMode.getSelectedItem().toString());
+        editor.putBoolean("CharmStatus", ShinyCharm.isChecked());
         editor.apply();
     }
 
     public void updateData(View view) {
+
         ChanceInfo();
+        saveData();
     }
 
 

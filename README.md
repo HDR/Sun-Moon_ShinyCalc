@@ -28,13 +28,15 @@ Matsuda Breeding Rates
 
 Changing Modes
 
+Keep current Shiny Charm selection on restart
+
 #Not Done:#
 
 Update Rates on Mode Selection
 
-Save current Mode and charm status on app close
+Save current Mode on app close
 
-Load Previous mode and charm status on launch
+Load Previous mode on launch
 
 #Requirements#
 Gradle 2.14.1 or Above

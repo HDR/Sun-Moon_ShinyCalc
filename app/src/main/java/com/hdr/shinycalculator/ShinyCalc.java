@@ -6,13 +6,13 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethod;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ShinyCalc extends AppCompatActivity {
 
@@ -21,6 +21,7 @@ public class ShinyCalc extends AppCompatActivity {
     TextView encValue;
 
     TextView currChance;
+    int counter;
 
     EditText setEncount;
 
@@ -44,40 +45,39 @@ public class ShinyCalc extends AppCompatActivity {
     }
 
     public void increaseCount(View view) {
-        int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
+        counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
         if (counter == 4096) {
             //Do Nothing
         }
         else if (counter >= 0){
             counter++;
             encValue.setText(Integer.toString(counter));
-            ChanceInfo();
             saveData();
+            ChanceInfo();
         }
     }
 
     public void decreaseCount(View view) {
-        int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
+        counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
         if (counter == 0) {
             //Do Nothing
         }
         else if (counter >= 1) {
             counter--;
             encValue.setText(Integer.toString(counter));
-            ChanceInfo();
             saveData();
+            ChanceInfo();
         }
     }
 
     public void resetCount(View view) {
-        int counter;
         counter = 0;
         encValue.setText(String.valueOf(counter));
         saveData();
+        ChanceInfo();
     }
 
     public void ChanceInfo(){
-        int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
         ShinyCharm = (CheckBox) findViewById(R.id.charm);
         if (counter <= 69 && !ShinyCharm.isChecked()) {
             currChance.setText("1/4096");
@@ -115,7 +115,7 @@ public class ShinyCalc extends AppCompatActivity {
         updateChanceInfo(3570, 3639, "1/1365", "1/4096", ShinyCharm.isChecked());
         updateChanceInfo(3640, 3824, "1/683", "1/1024", ShinyCharm.isChecked());
         updateChanceInfo(3825, 3894, "1/1365", "1/4096", ShinyCharm.isChecked());
-        updateChanceInfo(3895, 4079, "1/1365", "1/4096", ShinyCharm.isChecked());
+        updateChanceInfo(3895, 4079, "1/683", "1/1024", ShinyCharm.isChecked());
         updateChanceInfo(4080, 4149, "1/1365", "1/4096", ShinyCharm.isChecked());
     }
 
@@ -152,12 +152,21 @@ public class ShinyCalc extends AppCompatActivity {
 
     public void setField(View view) {
         String setEncount_text = setEncount.getText().toString().trim();
+        int setEncount_num = Integer.parseInt(String.valueOf(setEncount.getText()));
         if(setEncount_text.isEmpty()) {
             //do Nothing
          }
+        if(setEncount_num >= 4097) {
+            Toast.makeText(getApplicationContext(), "Value has to be 4096 or below.", Toast.LENGTH_SHORT).show();
+            InputMethodManager keyBo = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            setEncount.setText("");
+            setEncount.setVisibility(View.GONE);
+            keyBo.hideSoftInputFromWindow(setEncount.getWindowToken(), 0);
+        }
         else {
             setEncount.getText();
             encValue.setText(String.valueOf(setEncount.getText()));
+            ChanceInfo();
             saveData();
             setEncount.setVisibility(View.GONE);
             setEncount.setText("");
@@ -168,6 +177,6 @@ public class ShinyCalc extends AppCompatActivity {
     }
 
 
-    
+
 
 }

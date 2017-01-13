@@ -38,6 +38,9 @@ Save current Mode on app close
 
 Load Previous mode on launch
 
+#Might Do:#
+Dark Mode
+
 #Requirements#
 Gradle 2.14.1 or Above
 

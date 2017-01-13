@@ -16,7 +16,7 @@ S.O.S Rates (With Overflow)
 
 Shiny Charm Rates for S.O.S
 
-Save Current Encounters
+Keep current Encounters on restart
 
 
 

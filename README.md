@@ -16,7 +16,7 @@ S.O.S Rates (With Overflow, Up to 4096)
 
 Shiny Charm Rates for S.O.S
 
-Keep current Encounters on restart
+Keep Encounters on restart
 
 Set max Encounters to 4096
 
@@ -28,7 +28,7 @@ Matsuda Breeding Rates
 
 Changing Modes
 
-Keep current Shiny Charm selection on restart
+Keep Shiny Charm status on restart
 
 #Not Done:#
 

@@ -42,7 +42,7 @@ Save current Mode on app close
 
 Load Previous mode on launch
 
-Load shiny chance on launch
+Load shiny chance on launch (When loading encounters from previous session the chance will be set to 1/4096 or 1/1365 no matter what the counter is at)
 
 #Might Be Added:#
 Dark Mode w/ Toggle

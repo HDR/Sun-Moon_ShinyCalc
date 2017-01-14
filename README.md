@@ -18,9 +18,9 @@ Based off rates found here: https://www.reddit.com/r/pokemon/comments/5hmd9h/spo
  Matsuda Breeding
 
 #Done:#
-S.O.S Rates (With Overflow, Up to 4096)
+S.O.S Rates
 
-Shiny Charm Rates for S.O.S
+Shiny Charm Rates
 
 Keep Encounters on restart
 

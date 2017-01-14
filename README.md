@@ -42,6 +42,8 @@ Save current Mode on app close
 
 Load Previous mode on launch
 
+Load shiny chance on launch
+
 #Might Be Added:#
 Dark Mode w/ Toggle
 

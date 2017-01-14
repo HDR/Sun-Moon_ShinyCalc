@@ -1,7 +1,7 @@
 #Pokemon Sun/Moon Shiny Calculator
 Shiny Calculator App for Android
 
-[Beta Build](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator-Beta.apk) - Open on your Android Phone [Warning - Beta Build = Bugs]
+[Beta Build](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator-Beta.apk) - Download to your Android Phone [Warning - Beta Build = Bugs]
 
 Simple app to calculate the Shiny Chance of Pokemon in Pokemon Sun and Moon.
 

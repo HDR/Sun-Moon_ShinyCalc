@@ -36,15 +36,15 @@ Changing Modes
 
 Keep Shiny Charm status on restart
 
+Save current Mode on app close
+
 #Not Done:#
 
 Update Rates on Mode Selection
 
-Save current Mode on app close
-
 Load Previous mode on launch
 
-Load shiny chance on launch
+Load shiny rates on launch
 
 #Might Be Added:#
 Dark Mode w/ Toggle

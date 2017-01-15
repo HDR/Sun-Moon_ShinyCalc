@@ -46,7 +46,7 @@ Load Previous mode on launch
 
 Load shiny rates on launch
 
-Fix app crash if value of set = nil
+Fix app crash if value of EditText is empty. (NumberFormatException)
  
 #Might Be Added:#
 Dark Mode w/ Toggle

@@ -44,14 +44,9 @@ Update Rates on Mode Selection
 
 Load Previous mode on launch
 
-Load shiny rates on launch
-
-Fix app crash if value of EditText is empty. (NumberFormatException)
-
 #Known Bugs#
-Clicking set and then confirming without entering anything will cause a NumberFormatException and a crash.
 
-Switching modes does not update the chance text.
+Clicking set and then confirming without entering anything will cause a NumberFormatException and a crash.
  
 #Might Be Added:#
 Dark Mode w/ Toggle

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -38,6 +39,17 @@ public class ShinyCalc extends AppCompatActivity {
         setEncount = (EditText) findViewById(R.id.setField);
         setMode = (Spinner) findViewById(R.id.modeSet);
         ShinyCharm = (CheckBox) findViewById(R.id.charm);
+
+        setMode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ChanceInfo();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
         int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
         encValue.setText(Integer.toString(counter));
@@ -127,20 +139,10 @@ public class ShinyCalc extends AppCompatActivity {
             updateChanceInfo(4080, 4149, "1/1365", "1/4096", ShinyCharm.isChecked());
         }
         if (getMode.equals("Matsuda")) {
-            if (counter >= 0 && !ShinyCharm.isChecked()) {
-                currChance.setText("1/683");
-            }
-            if (counter >= 0 && ShinyCharm.isChecked()) {
-                currChance.setText("1/512");
-            }
+            updateChanceInfo(0, 4096, "1/512", "1/683", ShinyCharm.isChecked());
         }
         if (getMode.equals("Soft Reset")) {
-            if (counter >= 0 && !ShinyCharm.isChecked()) {
-                currChance.setText("1/4096");
-            }
-            if (counter >= 0 && ShinyCharm.isChecked()) {
-                currChance.setText("1/1365");
-            }
+            updateChanceInfo(0, 4096, "1/1365", "1/4096", ShinyCharm.isChecked());
         }
     }
 
@@ -185,7 +187,7 @@ public class ShinyCalc extends AppCompatActivity {
         int setEncount_num = Integer.parseInt(String.valueOf(setEncount.getText()));
         if(setEncount_text.isEmpty()) {
             //do Nothing
-         }
+        }
         if(setEncount_num >= 4097) {
             Toast.makeText(getApplicationContext(), "Value has to be 4096 or below.", Toast.LENGTH_SHORT).show();
             InputMethodManager keyBo = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);

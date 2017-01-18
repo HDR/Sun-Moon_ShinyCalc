@@ -38,9 +38,9 @@ Keep Shiny Charm status on restart
 
 Save current Mode on app close
 
-#Not Done:#
-
 Update Rates on Mode Selection
+
+#Not Done:#
 
 Load Previous mode on launch
 

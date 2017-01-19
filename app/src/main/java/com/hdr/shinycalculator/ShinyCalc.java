@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -65,6 +66,12 @@ public class ShinyCalc extends AppCompatActivity {
         String getSpinner = PreferenceManager.getDefaultSharedPreferences(this).getString("CurrentMode", "S.O.S");
         ArrayAdapter<String> array_spinner=(ArrayAdapter<String>)setMode.getAdapter();
         setMode.setSelection(array_spinner.getPosition(getSpinner));
+
+        String setString = setEncount.getText().toString();
+        if (TextUtils.isEmpty(setString)) {
+            return;
+        }
+
     }
 
     public void increaseCount(View view) {
@@ -188,27 +195,28 @@ public class ShinyCalc extends AppCompatActivity {
     }
 
     public void setField(View view) {
-        String setEncount_text = setEncount.getText().toString().trim();
-        int setEncount_num = Integer.parseInt(String.valueOf(setEncount.getText()));
-        if(setEncount_text.isEmpty()) {
-            //do Nothing
-        }
-        if(setEncount_num >= 4097) {
-            Toast.makeText(getApplicationContext(), "Value has to be 4096 or below.", Toast.LENGTH_SHORT).show();
-            InputMethodManager keyBo = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            setEncount.setText("");
-            setEncount.setVisibility(View.GONE);
-            keyBo.hideSoftInputFromWindow(setEncount.getWindowToken(), 0);
+        if (setEncount.getText().toString().matches("")) {
+            Toast.makeText(getApplicationContext(), "Error: No Value", Toast.LENGTH_SHORT).show();
         }
         else {
-            setEncount.getText();
-            encValue.setText(String.valueOf(setEncount.getText()));
-            saveData();
-            ChanceInfo();
-            setEncount.setVisibility(View.GONE);
-            setEncount.setText("");
-            InputMethodManager keyBo = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            keyBo.hideSoftInputFromWindow(setEncount.getWindowToken(), 0);
+            int setEncount_num = Integer.parseInt(String.valueOf(setEncount.getText()));
+            if(setEncount_num >= 4097) {
+                Toast.makeText(getApplicationContext(), "Value has to be 4096 or below.", Toast.LENGTH_SHORT).show();
+                InputMethodManager keyBo = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                setEncount.setText("");
+                setEncount.setVisibility(View.GONE);
+                keyBo.hideSoftInputFromWindow(setEncount.getWindowToken(), 0);
+            }
+            else {
+                setEncount.getText();
+                encValue.setText(String.valueOf(setEncount.getText()));
+                saveData();
+                ChanceInfo();
+                setEncount.setVisibility(View.GONE);
+                setEncount.setText("");
+                InputMethodManager keyBo = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                keyBo.hideSoftInputFromWindow(setEncount.getWindowToken(), 0);
+            }
         }
 
     }

@@ -42,12 +42,10 @@ Update Rates on Mode Selection
 
 Load Previous mode on launch
 
-#Not Done:#
-
 
 #Known Bugs#
 
-No Known Bugs :D
+None
  
 #Might Be Added:#
 Dark Mode w/ Toggle

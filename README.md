@@ -48,7 +48,7 @@ Bug Fixes
 
 #Known Bugs#
 
-Clicking set and then confirming without entering anything will cause a NumberFormatException and a crash.
+Clicking set and then confirming without entering anything will cause an app crash. (Could not execute method for android:onClick)
  
 #Might Be Added:#
 Dark Mode w/ Toggle

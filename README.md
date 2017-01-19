@@ -40,9 +40,11 @@ Save current Mode on app close
 
 Update Rates on Mode Selection
 
+Load Previous mode on launch
+
 #Not Done:#
 
-Load Previous mode on launch
+Bug Fixes
 
 #Known Bugs#
 

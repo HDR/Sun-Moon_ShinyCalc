@@ -44,6 +44,7 @@ public class ShinyCalc extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 ChanceInfo();
+                saveData();
             }
 
             @Override
@@ -60,6 +61,10 @@ public class ShinyCalc extends AppCompatActivity {
         String[] items = new String[]{"S.O.S", "Matsuda", "Soft Reset"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         setMode.setAdapter(adapter);
+
+        String getSpinner = PreferenceManager.getDefaultSharedPreferences(this).getString("CurrentMode", "S.O.S");
+        ArrayAdapter<String> array_spinner=(ArrayAdapter<String>)setMode.getAdapter();
+        setMode.setSelection(array_spinner.getPosition(getSpinner));
     }
 
     public void increaseCount(View view) {

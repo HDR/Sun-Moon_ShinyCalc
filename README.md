@@ -1,5 +1,5 @@
 #Pokemon Sun/Moon Shiny Calculator
-Shiny Calculator App for Android
+An Ad Free Shiny Calculator App for Android
 
 [Release Build Version 1.0](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator.apk) - Download to your Android Phone
 

@@ -52,6 +52,8 @@ Dark Mode w/ Toggle
 
 ![Dark Mode](http://i.imgur.com/e90f6pc.png)
 
+A local website that displays all the data from the app in your browser
+
 #Requirements#
 Gradle 2.14.1 or Above
 

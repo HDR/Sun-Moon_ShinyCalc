@@ -42,8 +42,11 @@ Update Rates on Mode Selection
 
 Load Previous mode on launch
 
+#Todo:#
 
-#Known Bugs#
+Make custom app icon
+
+#Known Bugs:#
 
 None
  

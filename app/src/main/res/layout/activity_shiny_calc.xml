@@ -11,16 +11,6 @@
     tools:context="com.hdr.shinycalculator.ShinyCalc">
 
     <Button
-        android:text="Reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/resetCount"
-        android:onClick="resetCount"
-        android:layout_below="@+id/enCounter"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="72dp" />
-
-    <Button
         android:text="-"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,14 +20,6 @@
         android:layout_alignBottom="@+id/resetCount"
         android:layout_alignParentStart="true" />
 
-    <CheckBox
-        android:text="Shiny Charm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/charm"
-        android:layout_alignBottom="@+id/decreaseCount"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:text="+"
         android:id="@+id/increaseCount"
@@ -46,26 +28,49 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/resetCount"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/decreaseCount" />
+
+    <TextView
+        android:text="Encounters: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_marginTop="14dp"
+        android:textSize="18sp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@+id/encChance"
+        android:layout_toStartOf="@+id/enCounter" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/setField"
+        android:onClick="setField"
+        android:visibility= "gone"
+        android:maxLength="4"
+        android:textAlignment="center"
+        android:layout_above="@+id/decreaseCount"
+        android:layout_centerHorizontal="true" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/modeSet"
         android:spinnerMode="dropdown"
-        android:layout_above="@+id/decreaseCount"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="16dp" />
+        android:layout_below="@+id/enCounter"
+        android:layout_alignParentStart="true" />
 
-    <TextView
-        android:id="@+id/encChance"
-        android:layout_height="wrap_content"
+    <Button
+        android:text="Set"
         android:layout_width="wrap_content"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:text="1/4096"
-        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/setEncount"
+        android:onClick="setEncounters"
+        android:layout_above="@+id/increaseCount"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -78,19 +83,37 @@
         android:textSize="18sp"
         android:layout_alignBaseline="@+id/textView5"
         android:layout_alignBottom="@+id/textView5"
-        android:layout_alignEnd="@+id/charm" />
+        android:layout_toEndOf="@+id/setEncount" />
 
-    <TextView
-        android:text="Encounters: "
+    <CheckBox
+        android:text="Shiny Charm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView5"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:layout_marginTop="14dp"
+        android:id="@+id/charm"
+        android:onClick="updateData"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/encChance"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:text="1/4096"
+        android:textAlignment="center"
         android:textSize="18sp"
-        android:layout_below="@+id/encChance"
-        android:layout_toStartOf="@+id/enCounter"
-        android:layout_marginEnd="12dp" />
-    android:layout_marginTop="11dp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resetCount"
+        android:onClick="resetCount"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/modeSet"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

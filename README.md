@@ -24,7 +24,7 @@ Shiny Charm Rates
 
 Keep Encounters on restart
 
-Set max Encounters to 4096 (Can be increased if needed)
+Set max Encounters to 8192
 
 Ability to set Encounters
 
@@ -46,7 +46,6 @@ Load Previous mode on launch
 
 Make custom app icon
 
-Clean up code
 
 #Known Bugs:#
 

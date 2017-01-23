@@ -76,7 +76,7 @@ public class ShinyCalc extends AppCompatActivity {
 
     public void increaseCount(View view) {
         counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
-        if (counter == 4096) {
+        if (counter == 8192) {
             //Do Nothing
         }
         else if (counter >= 0){
@@ -111,44 +111,23 @@ public class ShinyCalc extends AppCompatActivity {
         String getMode = setMode.getSelectedItem().toString();
         if (getMode.equals("S.O.S")) {
             ShinyCharm = (CheckBox) findViewById(R.id.charm);
-            if (counter <= 69 && !ShinyCharm.isChecked()) {
-                currChance.setText("1/4096");
+
+            int lowBound = 0;
+            int highBound = 69;
+
+            for (int i=0; i<= 80; i++) {
+                if (i%2 == 0) {
+                    updateChanceInfo(lowBound,  highBound, "1/1365", "1/4096", ShinyCharm.isChecked());
+                    lowBound = highBound + 1;
+                    highBound = lowBound + 185;
+                } else {
+                    updateChanceInfo(lowBound, highBound, "1/683", "1/1024", ShinyCharm.isChecked());
+                    lowBound = highBound + 1;
+                    highBound = lowBound + 69;
+                }
+
             }
-            if (counter <= 69 && ShinyCharm.isChecked()) {
-                currChance.setText("1/1365");
-            }
-            updateChanceInfo(70, 255, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(256, 325, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(326, 510, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(511, 580, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(581, 765, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(766, 835, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(836, 1020, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(1021, 1090, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(1091, 1275, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(1276, 1345, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(1346, 1530, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(1531, 1600, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(1601, 1785, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(1786, 1855, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(1856, 2040, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(2041, 2110, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(2111, 2295, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(2296, 2365, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(2366, 2550, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(2551, 2620, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(2621, 2805, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(2806, 2875, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(2876, 3060, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(3061, 3130, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(3131, 3315, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(3316, 3385, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(3386, 3570, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(3571, 3640, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(3641, 3825, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(3826, 3895, "1/1365", "1/4096", ShinyCharm.isChecked());
-            updateChanceInfo(3896, 4080, "1/683", "1/1024", ShinyCharm.isChecked());
-            updateChanceInfo(4081, 4150, "1/1365", "1/4096", ShinyCharm.isChecked());
+
         }
         if (getMode.equals("Matsuda")) {
             updateChanceInfo(0, 4096, "1/512", "1/683", ShinyCharm.isChecked());
@@ -200,8 +179,8 @@ public class ShinyCalc extends AppCompatActivity {
         }
         else {
             int setEncount_num = Integer.parseInt(String.valueOf(setEncount.getText()));
-            if(setEncount_num >= 4097) {
-                Toast.makeText(getApplicationContext(), "Value has to be 4096 or below.", Toast.LENGTH_SHORT).show();
+            if(setEncount_num >= 8193) {
+                Toast.makeText(getApplicationContext(), "Value has to be 8192 or below.", Toast.LENGTH_SHORT).show();
                 InputMethodManager keyBo = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 setEncount.setText("");
                 setEncount.setVisibility(View.GONE);

@@ -24,7 +24,7 @@ Shiny Charm Rates
 
 Keep Encounters on restart
 
-Set max Encounters to 8192
+Set max Encounters to 8192 (Meaning the app does currently not support anything above 8192 Encounters)
 
 Ability to set Encounters
 

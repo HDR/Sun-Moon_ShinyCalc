@@ -124,10 +124,10 @@ public class ShinyCalc extends AppCompatActivity {
 
         }
         if (getMode.equals("Matsuda")) {
-            updateChanceInfo(0, 4096, "1/512", "1/683", ShinyCharm.isChecked());
+            updateChanceInfo(0, 8192, "1/512", "1/683", ShinyCharm.isChecked());
         }
         if (getMode.equals("Soft Reset")) {
-            updateChanceInfo(0, 4096, "1/1365", "1/4096", ShinyCharm.isChecked());
+            updateChanceInfo(0, 8192, "1/1365", "1/4096", ShinyCharm.isChecked());
         }
     }
 

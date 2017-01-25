@@ -76,10 +76,7 @@ public class ShinyCalc extends AppCompatActivity {
 
     public void increaseCount(View view) {
         counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
-        if (counter == 8192) {
-            //Do Nothing
-        }
-        else if (counter >= 0){
+        if (counter != 8192) {
             counter++;
             encValue.setText(Integer.toString(counter));
             saveData();
@@ -89,10 +86,7 @@ public class ShinyCalc extends AppCompatActivity {
 
     public void decreaseCount(View view) {
         counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
-        if (counter == 0) {
-            //Do Nothing
-        }
-        else if (counter >= 1) {
+        if (counter != 0) {
             counter--;
             encValue.setText(Integer.toString(counter));
             saveData();
@@ -199,8 +193,4 @@ public class ShinyCalc extends AppCompatActivity {
         }
 
     }
-
-
-
-
 }

@@ -29,7 +29,6 @@ public class ShinyCalc extends AppCompatActivity {
 
     Spinner setMode;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -157,7 +156,6 @@ public class ShinyCalc extends AppCompatActivity {
         ChanceInfo();
         saveData();
     }
-
 
     public void setEncounters(View view){
         setEncount.setVisibility(View.VISIBLE);

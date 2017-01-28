@@ -60,7 +60,7 @@ Dark Mode w/ Toggle
 
 ![Dark Mode](http://i.imgur.com/e90f6pc.png)
 
-A local website that displays all the data from the app in your browser
+A way to display Rates and Encounters in the web browser on a computer (For streamers)
 
 #Requirements#
 Gradle 2.14.1 or Above

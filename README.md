@@ -9,7 +9,7 @@ Simple app to calculate the Shiny Chance of Pokemon in Pokemon Sun and Moon.
 
 ![Shiny Calculator](http://i.imgur.com/5oeDCmW.png?1)
 
-Based off rates found here: https://www.reddit.com/r/pokemon/comments/5hmd9h/spoiler_some_more_indepth_mechanics_on_sos_battle/
+Based off rates found in this [Reddit Post](https://www.reddit.com/r/pokemon/comments/5hmd9h/spoiler_some_more_indepth_mechanics_on_sos_battle/)
 
 Got Questions? you can reach me on twitter [@MartinRefseth](https://twitter.com/MartinRefseth)
 

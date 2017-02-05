@@ -2,6 +2,8 @@
 
 This part of the github contains the older versions of the app (apk files), use these if you run into any issues with a newer build.
 
+The version changelog can be found [Here](https://github.com/MrHDR/Sun-Moon_ShinyCalc/wiki/Changelog)
+
 ###1.0
 [1.0 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.0/com.hdr.shinycalculator.apk)
 ###1.0.1

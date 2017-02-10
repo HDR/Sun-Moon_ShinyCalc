@@ -18,16 +18,12 @@ import android.widget.Toast;
 
 public class ShinyCalc extends AppCompatActivity {
 
-    CheckBox ShinyCharm;
-
-    TextView encValue;
-
-    TextView currChance;
-    int counter;
-
-    EditText setEncount;
-
-    Spinner setMode;
+    private CheckBox ShinyCharm;
+    private TextView encValue;
+    private TextView currChance;
+    private int counter;
+    private EditText setEncount;
+    private Spinner setMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +54,7 @@ public class ShinyCalc extends AppCompatActivity {
         boolean charmStatus = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("CharmStatus", false);
         ShinyCharm.setChecked(charmStatus);
 
-        String[] items = new String[]{"S.O.S", "Matsuda", "Soft Reset"};
+        String[] items = new String[]{"S.O.S", "Masuda", "Soft Reset"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         setMode.setAdapter(adapter);
 
@@ -100,7 +96,7 @@ public class ShinyCalc extends AppCompatActivity {
         ChanceInfo();
     }
 
-    public void ChanceInfo() {
+    private void ChanceInfo() {
         String getMode = setMode.getSelectedItem().toString();
         if (getMode.equals("S.O.S")) {
             ShinyCharm = (CheckBox) findViewById(R.id.charm);
@@ -122,7 +118,8 @@ public class ShinyCalc extends AppCompatActivity {
             }
 
         }
-        if (getMode.equals("Matsuda")) {
+
+        if (getMode.equals("Masuda")) {
             updateChanceInfo(0, 8192, "1/512", "1/683", ShinyCharm.isChecked());
         }
         if (getMode.equals("Soft Reset")) {
@@ -141,9 +138,8 @@ public class ShinyCalc extends AppCompatActivity {
         }
     }
 
-    public void saveData() {
+    private void saveData() {
         SharedPreferences sC =  PreferenceManager.getDefaultSharedPreferences(this);
-
         SharedPreferences.Editor editor = sC.edit();
         editor.putInt("counterNum", Integer.parseInt(encValue.getText().toString()));
         editor.putString("CurrentMode", setMode.getSelectedItem().toString());

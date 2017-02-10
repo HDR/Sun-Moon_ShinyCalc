@@ -7,13 +7,14 @@ The version changelog can be found [Here](https://github.com/MrHDR/Sun-Moon_Shin
 ###1.0
 [1.0 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.0/com.hdr.shinycalculator.apk)
 ###1.0.1
-[1.0 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.0.1/com.hdr.shinycalculator.apk)
+[1.0.1 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.0.1/com.hdr.shinycalculator.apk)
 ###1.1
-[1.0 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.1/com.hdr.shinycalculator.apk)
+[1.1 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.1/com.hdr.shinycalculator.apk)
 ###1.1.1
-[1.0 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.1.1/com.hdr.shinycalculator.apk)
+[1.1.1 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.1.1/com.hdr.shinycalculator.apk)
 ###1.1.2
-[1.0 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.1.2/com.hdr.shinycalculator.apk)
+[1.1.2 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.1.2/com.hdr.shinycalculator.apk)
 ###1.1.3
-[1.0 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.1.3/com.hdr.shinycalculator.apk)
-
+[1.1.3 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.1.3/com.hdr.shinycalculator.apk)
+###1.1.4
+[1.1.4 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.1.4/com.hdr.shinycalculator.apk)

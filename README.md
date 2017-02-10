@@ -19,7 +19,7 @@ Got Questions? you can reach me on twitter [@MartinRefseth](https://twitter.com/
  
  Soft Resets
  
- Matsuda Breeding
+ Masuda Breeding
 
 #Done:#
 S.O.S Rates
@@ -34,7 +34,7 @@ Ability to set Encounters
 
 Soft Reset Rates
 
-Matsuda Breeding Rates
+Masuda Breeding Rates
 
 Changing Modes
 

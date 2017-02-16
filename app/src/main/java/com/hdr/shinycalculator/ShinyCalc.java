@@ -2,10 +2,12 @@ package com.hdr.shinycalculator;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -66,7 +68,6 @@ public class ShinyCalc extends AppCompatActivity {
         if (TextUtils.isEmpty(setString)) {
             return;
         }
-
     }
 
     public void increaseCount(View view) {
@@ -88,6 +89,27 @@ public class ShinyCalc extends AppCompatActivity {
             ChanceInfo();
         }
     }
+    @Override
+     public boolean onKeyDown(int  keyCode, KeyEvent event) {
+        counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
+         if ((keyCode == KeyEvent.KEYCODE_VOLUME_UP)){
+             if (counter != 8192) {
+                 counter++;
+                 encValue.setText(Integer.toString(counter));
+                 saveData();
+                 ChanceInfo();
+             }
+         }
+        if ((keyCode == KeyEvent.KEYCODE_VOLUME_DOWN)){
+            if (counter != 0) {
+                counter--;
+                encValue.setText(Integer.toString(counter));
+                saveData();
+                ChanceInfo();
+            }
+        }
+         return true;
+     }
 
     public void resetCount(View view) {
         counter = 0;

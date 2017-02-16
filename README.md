@@ -1,7 +1,7 @@
 #Pokemon Sun/Moon Shiny Calculator
 An Ad Free Shiny Calculator App for Android
 
-[Release Build Version 1.1.4](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator.apk) - Download to your Android Phone
+[Release Build Version 1.1.5](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator.apk) - Download to your Android Phone
 
 [Older Versions](https://github.com/MrHDR/Sun-Moon_ShinyCalc/tree/master/Versions) - These are the older versions of the apk, if you run into any issues with a new version, try installing an older version.
 
@@ -50,6 +50,7 @@ Load Previous mode on launch
 
 Make custom app icon
 
+Remove sound on volume button press (If even possible)
 
 #Known Bugs:#
 

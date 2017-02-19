@@ -7,7 +7,7 @@ An Ad Free Shiny Calculator App for Android
 
 Simple app to calculate the Shiny Chance of Pokemon in Pokemon Sun and Moon.
 
-![Shiny Calculator](http://i.imgur.com/Y0hkAbq.jpg) ![Shiny Calculator](http://i.imgur.com/TDdKh8C.png)
+![Shiny Calculator](http://i.imgur.com/Y0hkAbq.jpg?1) ![Shiny Calculator](http://i.imgur.com/TDdKh8C.png?1)
 
 Based off rates found in this [Reddit Post](https://www.reddit.com/r/pokemon/comments/5hmd9h/spoiler_some_more_indepth_mechanics_on_sos_battle/)
 

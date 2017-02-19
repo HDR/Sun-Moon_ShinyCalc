@@ -3,7 +3,7 @@ An Ad Free Shiny Calculator App for Android
 
 [Release Build Version 1.1.5](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator.apk) - Download to your Android Phone
 
-[Dev Build Version 1.2.0](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/Dev/com.hdr.shinycalculator.apk) - Dev Version (Dark Mode)
+[Dev Build Version 1.2.1](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/Dev/com.hdr.shinycalculator.apk) - Dev Version (Dark Mode)
 
 [Older Versions](https://github.com/MrHDR/Sun-Moon_ShinyCalc/tree/master/Versions) - These are the older versions of the apk, if you run into any issues with a new version, try installing an older version.
 

@@ -20,3 +20,5 @@ The version changelog can be found [Here](https://github.com/MrHDR/Sun-Moon_Shin
 [1.1.4 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.1.4/com.hdr.shinycalculator.apk)
 ###1.1.5
 [1.1.5 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.1.5/com.hdr.shinycalculator.apk)
+###1.2.0
+[1.2.0 Apk](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/Versions/1.2.0/com.hdr.shinycalculator.apk)

@@ -1,14 +1,15 @@
 package com.hdr.shinycalculator;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.AudioManager;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,7 +19,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ShinyCalc extends AppCompatActivity {
+public class ShinyCalc extends Activity {
 
     private CheckBox ShinyCharm;
     private TextView encValue;
@@ -26,10 +27,19 @@ public class ShinyCalc extends AppCompatActivity {
     private int counter;
     private EditText setEncount;
     private Spinner setMode;
+    private CheckBox changeTheme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+         boolean switchStatus = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("theme", true);
+         if (switchStatus) {
+            setTheme(R.style.MaterialDarkHDR);
+         }
+         else {
+            setTheme(R.style.AppTheme);
+        }
         setContentView(R.layout.activity_shiny_calc);
 
         encValue = (TextView) findViewById(R.id.enCounter);
@@ -37,6 +47,7 @@ public class ShinyCalc extends AppCompatActivity {
         setEncount = (EditText) findViewById(R.id.setField);
         setMode = (Spinner) findViewById(R.id.modeSet);
         ShinyCharm = (CheckBox) findViewById(R.id.charm);
+        changeTheme = (CheckBox) findViewById(R.id.DarkMode);
 
         setMode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -56,12 +67,15 @@ public class ShinyCalc extends AppCompatActivity {
         boolean charmStatus = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("CharmStatus", false);
         ShinyCharm.setChecked(charmStatus);
 
+        boolean switchState = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("theme", false);
+        changeTheme.setChecked(switchState);
+
         String[] items = new String[]{"S.O.S", "Masuda", "Soft Reset"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         setMode.setAdapter(adapter);
 
         String getSpinner = PreferenceManager.getDefaultSharedPreferences(this).getString("CurrentMode", "S.O.S");
-        ArrayAdapter<String> array_spinner=(ArrayAdapter<String>)setMode.getAdapter();
+        ArrayAdapter<String> array_spinner = (ArrayAdapter<String>) setMode.getAdapter();
         setMode.setSelection(array_spinner.getPosition(getSpinner));
 
         String setString = setEncount.getText().toString();
@@ -89,18 +103,19 @@ public class ShinyCalc extends AppCompatActivity {
             ChanceInfo();
         }
     }
+
     @Override
-     public boolean onKeyDown(int  keyCode, KeyEvent event) {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
         counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
-         if ((keyCode == KeyEvent.KEYCODE_VOLUME_UP)){
-             if (counter != 8192) {
-                 counter++;
-                 encValue.setText(Integer.toString(counter));
-                 saveData();
-                 ChanceInfo();
-             }
-         }
-        if ((keyCode == KeyEvent.KEYCODE_VOLUME_DOWN)){
+        if ((keyCode == KeyEvent.KEYCODE_VOLUME_UP)) {
+            if (counter != 8192) {
+                counter++;
+                encValue.setText(Integer.toString(counter));
+                saveData();
+                ChanceInfo();
+            }
+        }
+        if ((keyCode == KeyEvent.KEYCODE_VOLUME_DOWN)) {
             if (counter != 0) {
                 counter--;
                 encValue.setText(Integer.toString(counter));
@@ -108,8 +123,8 @@ public class ShinyCalc extends AppCompatActivity {
                 ChanceInfo();
             }
         }
-         return true;
-     }
+        return true;
+    }
 
     public void resetCount(View view) {
         counter = 0;
@@ -126,9 +141,9 @@ public class ShinyCalc extends AppCompatActivity {
             int lowBound = 0;
             int highBound = 69;
 
-            for (int i=0; i<= 80; i++) {
-                if (i%2 == 0) {
-                    updateChanceInfo(lowBound,  highBound, "1/1365", "1/4096", ShinyCharm.isChecked());
+            for (int i = 0; i <= 80; i++) {
+                if (i % 2 == 0) {
+                    updateChanceInfo(lowBound, highBound, "1/1365", "1/4096", ShinyCharm.isChecked());
                     lowBound = highBound + 1;
                     highBound = lowBound + 185;
                 } else {
@@ -151,7 +166,7 @@ public class ShinyCalc extends AppCompatActivity {
 
     private void updateChanceInfo(int lower_bound, int higher_bound, String chanceChecked, String chanceUnchecked, boolean shinyCharm) {
         int counter = PreferenceManager.getDefaultSharedPreferences(this).getInt("counterNum", 0);
-        if (counter >= lower_bound && counter <= higher_bound ) {
+        if (counter >= lower_bound && counter <= higher_bound) {
             if (shinyCharm) {
                 currChance.setText(chanceChecked);
             } else {
@@ -161,11 +176,12 @@ public class ShinyCalc extends AppCompatActivity {
     }
 
     private void saveData() {
-        SharedPreferences sC =  PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences sC = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sC.edit();
         editor.putInt("counterNum", Integer.parseInt(encValue.getText().toString()));
         editor.putString("CurrentMode", setMode.getSelectedItem().toString());
         editor.putBoolean("CharmStatus", ShinyCharm.isChecked());
+        editor.putBoolean("theme", changeTheme.isChecked());
         editor.apply();
     }
 
@@ -175,7 +191,7 @@ public class ShinyCalc extends AppCompatActivity {
         saveData();
     }
 
-    public void setEncounters(View view){
+    public void setEncounters(View view) {
         setEncount.setVisibility(View.VISIBLE);
         setEncount.requestFocus();
         setEncount.setFocusableInTouchMode(true);
@@ -186,17 +202,15 @@ public class ShinyCalc extends AppCompatActivity {
     public void setField(View view) {
         if (setEncount.getText().toString().matches("")) {
             Toast.makeText(getApplicationContext(), "Error: No Value", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             int setEncount_num = Integer.parseInt(String.valueOf(setEncount.getText()));
-            if(setEncount_num >= 8193) {
+            if (setEncount_num >= 8193) {
                 Toast.makeText(getApplicationContext(), "Value has to be 8192 or below.", Toast.LENGTH_SHORT).show();
                 InputMethodManager keyBo = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 setEncount.setText("");
                 setEncount.setVisibility(View.GONE);
                 keyBo.hideSoftInputFromWindow(setEncount.getWindowToken(), 0);
-            }
-            else {
+            } else {
                 setEncount.getText();
                 encValue.setText(String.valueOf(setEncount.getText()));
                 saveData();
@@ -208,5 +222,12 @@ public class ShinyCalc extends AppCompatActivity {
             }
         }
 
+    }
+
+    public void setDM(View view){
+        saveData();
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
     }
 }

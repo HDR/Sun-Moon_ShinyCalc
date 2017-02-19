@@ -1,9 +1,7 @@
 #Pokemon Sun/Moon Shiny Calculator
 An Ad Free Shiny Calculator App for Android
 
-[Release Build Version 1.1.5](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator.apk) - Download to your Android Phone
-
-[Dev Build Version 1.2.1](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/Dev/com.hdr.shinycalculator.apk) - Dev Version (Dark Mode)
+[Release Build Version 1.2.1](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator.apk) - Download to your Android Phone
 
 [Older Versions](https://github.com/MrHDR/Sun-Moon_ShinyCalc/tree/master/Versions) - These are the older versions of the apk, if you run into any issues with a new version, try installing an older version.
 
@@ -48,6 +46,8 @@ Update Rates on Mode Selection
 
 Load Previous mode on launch
 
+Dark Mode
+
 #Todo:#
 
 Make custom app icon
@@ -59,9 +59,6 @@ Remove sound on volume button press (If even possible)
 None
  
 #Might Be Added:#
-Dark Mode w/ Toggle
-
-![Dark Mode](http://i.imgur.com/e90f6pc.png)
 
 A way to display Rates and Encounters in the web browser on a computer (For streamers)
 

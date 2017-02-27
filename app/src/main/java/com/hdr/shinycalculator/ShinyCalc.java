@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -70,9 +71,8 @@ public class ShinyCalc extends Activity {
         boolean switchState = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("theme", false);
         changeTheme.setChecked(switchState);
 
-        String[] items = new String[]{"S.O.S", "Masuda", "Soft Reset"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        setMode.setAdapter(adapter);
+        SpinnerAdapter CSpin = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, new String[]{"S.O.S", "Masuda", "Soft Reset"});
+        setMode.setAdapter(CSpin);
 
         String getSpinner = PreferenceManager.getDefaultSharedPreferences(this).getString("CurrentMode", "S.O.S");
         ArrayAdapter<String> array_spinner = (ArrayAdapter<String>) setMode.getAdapter();
@@ -186,7 +186,6 @@ public class ShinyCalc extends Activity {
     }
 
     public void updateData(View view) {
-
         ChanceInfo();
         saveData();
     }

@@ -51,6 +51,7 @@ App Icon
 
 #Todo:#
 
+Prevent system from going to sleep while app is being used (1.2.4)
 
 #Known Bugs:#
 

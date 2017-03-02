@@ -1,7 +1,7 @@
 #Pokemon Sun/Moon Shiny Chance Calculator
 An Ad free Shiny Chance Calculator App for Android
 
-[Release Build Version 1.2.3](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator.apk) - Download to your Android Phone
+[Release Build Version 1.2.4](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator.apk) - Download to your Android Phone
 
 [Older Versions](https://github.com/MrHDR/Sun-Moon_ShinyCalc/tree/master/Versions) - These are the older versions of the apk, if you run into any issues with a new version, try installing an older version.
 
@@ -51,7 +51,6 @@ App Icon
 
 #Todo:#
 
-Prevent system from going to sleep while app is being used (1.2.4)
 
 #Known Bugs:#
 

@@ -51,6 +51,9 @@ App Icon
 
 #Todo:#
 
+Display guaranteed perfect IVs
+
+Display chance of Hidden Ability
 
 #Known Bugs:#
 

@@ -12,7 +12,7 @@ Based off rates found in this [Reddit Post](https://www.reddit.com/r/pokemon/com
 
 Got Questions? you can reach me on twitter [@MartinRefseth](https://twitter.com/MartinRefseth)
 
-#Supports the following Methods of shiny hunting:#
+## Supports the following Methods of shiny hunting:
 
  S.O.S Chaining
  
@@ -20,7 +20,7 @@ Got Questions? you can reach me on twitter [@MartinRefseth](https://twitter.com/
  
  Masuda Breeding
 
-#Done:#
+## Done:
 S.O.S Rates
 
 Shiny Charm Rates
@@ -49,21 +49,21 @@ Dark Mode
 
 App Icon
 
-#Todo:#
+## Todo:
 
 Display guaranteed perfect IVs
 
 Display chance of Hidden Ability
 
-#Known Bugs:#
+## Known Bugs:
 
 None
  
-#Might Be Added:#
+## Might Be Added:
 
 A way to display Rates and Encounters in the web browser on a computer (For streamers)
 
-#Requirements#
+## Requirements
 Gradle 2.14.1 or Above
 
 Android Studio

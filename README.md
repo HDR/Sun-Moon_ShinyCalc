@@ -1,4 +1,4 @@
-#Pokemon Sun/Moon Shiny Chance Calculator
+# Pokemon Sun/Moon Shiny Chance Calculator
 An Ad free Shiny Chance Calculator App for Android
 
 [Release Build Version 1.2.5](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator.apk) - Download to your Android Phone
@@ -20,7 +20,7 @@ Got Questions? you can reach me on twitter [@MartinRefseth](https://twitter.com/
  
  Masuda Breeding
 
-#Done:#
+## Done:
 S.O.S Rates
 
 Shiny Charm Rates
@@ -49,18 +49,20 @@ Dark Mode
 
 App Icon
 
-#Todo:#
+## Todo:#
+Perfect Iv Chance
 
+Hidden Ability Chance
 
-#Known Bugs:#
+## Known Bugs:
 
 None
  
-#Might Be Added:#
+## Might Be Added:
 
 A way to display Rates and Encounters in the web browser on a computer (For streamers)
 
-#Requirements#
+## Requirements
 Gradle 3.3 or above
 
 Android Studio 2.3.0 or above

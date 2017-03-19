@@ -1,7 +1,7 @@
 #Pokemon Sun/Moon Shiny Chance Calculator
 An Ad free Shiny Chance Calculator App for Android
 
-[Release Build Version 1.2.4](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator.apk) - Download to your Android Phone
+[Release Build Version 1.2.5](https://github.com/MrHDR/Sun-Moon_ShinyCalc/raw/master/com.hdr.shinycalculator.apk) - Download to your Android Phone
 
 [Older Versions](https://github.com/MrHDR/Sun-Moon_ShinyCalc/tree/master/Versions) - These are the older versions of the apk, if you run into any issues with a new version, try installing an older version.
 
@@ -61,8 +61,8 @@ None
 A way to display Rates and Encounters in the web browser on a computer (For streamers)
 
 #Requirements#
-Gradle 2.14.1 or Above
+Gradle 3.3 or above
 
-Android Studio
+Android Studio 2.3.0 or above
 
 Android 5.0 (SDK Version 21 Minimum)

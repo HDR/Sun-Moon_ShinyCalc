@@ -36,11 +36,11 @@ public class ShinyCalc extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-         boolean switchStatus = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("theme", false);
-         if (switchStatus) {
+        boolean switchStatus = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("theme", false);
+        if (switchStatus) {
             setTheme(R.style.MaterialDarkHDR);
-         }
-         else {
+        }
+        else {
             setTheme(R.style.AppTheme);
         }
         setContentView(R.layout.activity_shiny_calc);

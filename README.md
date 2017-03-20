@@ -49,7 +49,7 @@ Dark Mode
 
 App Icon
 
-## Todo:#
+## Todo:
 Perfect Iv Chance
 
 Hidden Ability Chance

@@ -63,7 +63,7 @@ None
 A way to display Rates and Encounters in the web browser on a computer (For streamers)
 
 ## Requirements
-Gradle 3.3 or above
+[Gradle 3.3](https://gradle.org/install) or above
 
 Android Studio 2.3.0 or above
 

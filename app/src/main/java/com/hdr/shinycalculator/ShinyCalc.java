@@ -1,11 +1,14 @@
 package com.hdr.shinycalculator;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -80,6 +83,17 @@ public class ShinyCalc extends Activity {
         ArrayAdapter<String> array_spinner = (ArrayAdapter<String>) setMode.getAdapter();
         setMode.setSelection(array_spinner.getPosition(getSpinner));
 
+        //--Notification Stuff--\\
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setContentTitle(currChance.getText())
+                        .setContentText("Encounters: " + encValue.getText());
+        int mNotificationId = 5222;
+        NotificationManager mNotifyMgr = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        mNotifyMgr.notify(mNotificationId, mBuilder.build());
+        //--End--\\
+
         String setString = setEncount.getText().toString();
         if (TextUtils.isEmpty(setString)) {
             return;
@@ -93,6 +107,7 @@ public class ShinyCalc extends Activity {
             encValue.setText(Integer.toString(counter));
             saveData();
             ChanceInfo();
+            UpdateNotification();
         }
     }
 
@@ -103,6 +118,7 @@ public class ShinyCalc extends Activity {
             encValue.setText(Integer.toString(counter));
             saveData();
             ChanceInfo();
+            UpdateNotification();
         }
     }
 
@@ -115,6 +131,7 @@ public class ShinyCalc extends Activity {
                 encValue.setText(Integer.toString(counter));
                 saveData();
                 ChanceInfo();
+                UpdateNotification();
             }
         }
         if ((keyCode == KeyEvent.KEYCODE_VOLUME_DOWN)) {
@@ -123,6 +140,7 @@ public class ShinyCalc extends Activity {
                 encValue.setText(Integer.toString(counter));
                 saveData();
                 ChanceInfo();
+                UpdateNotification();
             }
         }
         return true;
@@ -133,6 +151,7 @@ public class ShinyCalc extends Activity {
         encValue.setText(String.valueOf(counter));
         saveData();
         ChanceInfo();
+        UpdateNotification();
     }
 
     private void ChanceInfo() {
@@ -153,9 +172,7 @@ public class ShinyCalc extends Activity {
                     lowBound = highBound + 1;
                     highBound = lowBound + 69;
                 }
-
             }
-
         }
 
         if (getMode.equals("Masuda")) {
@@ -190,6 +207,7 @@ public class ShinyCalc extends Activity {
     public void updateData(View view) {
         ChanceInfo();
         saveData();
+        UpdateNotification();
     }
 
     public void setEncounters(View view) {
@@ -220,9 +238,9 @@ public class ShinyCalc extends Activity {
                 setEncount.setText("");
                 InputMethodManager keyBo = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 keyBo.hideSoftInputFromWindow(setEncount.getWindowToken(), 0);
+                UpdateNotification();
             }
         }
-
     }
 
     public void setDM(View view){
@@ -230,5 +248,16 @@ public class ShinyCalc extends Activity {
         Intent intent = getIntent();
         finish();
         startActivity(intent);
+    }
+
+    public void UpdateNotification() {
+        Intent increaseMe = new Intent(this, ShinyCalc.class);
+        PendingIntent increaseCount = PendingIntent.getActivity(ShinyCalc.this, 0, increaseMe, Intent.FILL_IN_ACTION);
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
+        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mBuilder.setSmallIcon(R.mipmap.ic_launcher).setOnlyAlertOnce(true);
+        mBuilder.setContentTitle(currChance.getText()).setContentText("Encounters: " + encValue.getText());
+        int mNotificationId = 5222;
+        mNotificationManager.notify(mNotificationId, mBuilder.build());
     }
 }

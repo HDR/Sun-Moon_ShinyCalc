@@ -1,3 +1,5 @@
+# Rates are not correct.
+
 # Pokemon Sun/Moon Shiny Chance Calculator
 An Ad free Shiny Chance Calculator App for Android
 
